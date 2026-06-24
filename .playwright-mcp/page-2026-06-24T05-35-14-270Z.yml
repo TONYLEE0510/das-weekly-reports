@@ -1,0 +1,864 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e8]:
+        - link "Homepage" [ref=e10] [cursor=pointer]:
+          - /url: /
+          - img [ref=e11]
+        - generic [ref=e13]:
+          - navigation "Global" [ref=e16]:
+            - list [ref=e17]:
+              - listitem [ref=e18]:
+                - button "Platform" [ref=e20] [cursor=pointer]:
+                  - text: Platform
+                  - img [ref=e21]
+              - listitem [ref=e23]:
+                - button "Solutions" [ref=e25] [cursor=pointer]:
+                  - text: Solutions
+                  - img [ref=e26]
+              - listitem [ref=e28]:
+                - button "Resources" [ref=e30] [cursor=pointer]:
+                  - text: Resources
+                  - img [ref=e31]
+              - listitem [ref=e33]:
+                - button "Open Source" [ref=e35] [cursor=pointer]:
+                  - text: Open Source
+                  - img [ref=e36]
+              - listitem [ref=e38]:
+                - button "Enterprise" [ref=e40] [cursor=pointer]:
+                  - text: Enterprise
+                  - img [ref=e41]
+              - listitem [ref=e43]:
+                - link "Pricing" [ref=e44] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+                  - generic [ref=e45]: Pricing
+          - generic [ref=e46]:
+            - button "Search or jump to…" [ref=e49] [cursor=pointer]:
+              - img [ref=e51]
+            - link "Sign in" [ref=e54] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FTONYLEE0510%2Fdocument-automatic-system
+            - link "Sign up" [ref=e55] [cursor=pointer]:
+              - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&source=header-repo&source_repo=TONYLEE0510%2Fdocument-automatic-system
+            - button "Appearance settings" [disabled] [ref=e58]:
+              - img
+  - main [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e66]:
+          - img [ref=e67]
+          - link "TONYLEE0510" [ref=e70] [cursor=pointer]:
+            - /url: /TONYLEE0510
+          - generic [ref=e71]: /
+          - strong [ref=e72]:
+            - link "document-automatic-system" [ref=e73] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system
+          - generic [ref=e74]: Public
+        - generic [ref=e75]:
+          - list:
+            - listitem [ref=e76]:
+              - link "You must be signed in to change notification settings" [ref=e77] [cursor=pointer]:
+                - /url: /login?return_to=%2FTONYLEE0510%2Fdocument-automatic-system
+                - img [ref=e78]
+                - text: Notifications
+            - listitem [ref=e80]:
+              - link "Fork 0" [ref=e81] [cursor=pointer]:
+                - /url: /login?return_to=%2FTONYLEE0510%2Fdocument-automatic-system
+                - img [ref=e82]
+                - text: Fork
+                - generic "0" [ref=e84]
+            - listitem [ref=e85]:
+              - link "You must be signed in to star a repository" [ref=e87] [cursor=pointer]:
+                - /url: /login?return_to=%2FTONYLEE0510%2Fdocument-automatic-system
+                - img [ref=e88]
+                - text: Star
+                - generic "0 users starred this repository" [ref=e90]: "0"
+      - navigation "Repository" [ref=e91]:
+        - list [ref=e92]:
+          - listitem [ref=e93]:
+            - link "Code" [ref=e94] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system
+              - img [ref=e95]
+              - generic [ref=e97]: Code
+          - listitem [ref=e98]:
+            - link "Issues" [ref=e99] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/issues
+              - img [ref=e100]
+              - generic [ref=e103]: Issues
+          - listitem [ref=e104]:
+            - link "Pull requests" [ref=e105] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/pulls
+              - img [ref=e106]
+              - generic [ref=e108]: Pull requests
+          - listitem [ref=e109]:
+            - link "Actions" [ref=e110] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/actions
+              - img [ref=e111]
+              - generic [ref=e113]: Actions
+          - listitem [ref=e114]:
+            - link "Projects" [ref=e115] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/projects
+              - img [ref=e116]
+              - generic [ref=e118]: Projects
+          - listitem [ref=e119]:
+            - link "Security and quality" [ref=e120] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/security
+              - img [ref=e121]
+              - generic [ref=e123]: Security and quality
+          - listitem [ref=e124]:
+            - link "Insights" [ref=e125] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/pulse
+              - img [ref=e126]
+              - generic [ref=e128]: Insights
+    - generic [ref=e141]:
+      - heading "TONYLEE0510/document-automatic-system" [level=1] [ref=e143]
+      - generic [ref=e144]:
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - generic [ref=e149]:
+              - button "main branch" [ref=e151] [cursor=pointer]:
+                - generic [ref=e152]:
+                  - generic [ref=e154]:
+                    - img [ref=e156]
+                    - generic [ref=e159]: main
+                  - generic:
+                    - img
+              - generic [ref=e160]:
+                - link "Branches" [ref=e161] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/branches
+                  - generic [ref=e162]:
+                    - generic:
+                      - img
+                    - generic [ref=e163]: Branches
+                - link "Tags" [ref=e164] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/tags
+                  - generic [ref=e165]:
+                    - generic:
+                      - img
+                    - generic [ref=e166]: Tags
+            - generic [ref=e167]:
+              - generic [ref=e171]:
+                - img [ref=e173]
+                - combobox "Go to file" [ref=e175]
+              - button "Code" [ref=e176] [cursor=pointer]:
+                - generic [ref=e177]:
+                  - generic:
+                    - img
+                  - generic [ref=e178]: Code
+                  - generic:
+                    - img
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - heading "Folders and files" [level=2] [ref=e181]
+              - table "Folders and files" [ref=e182]:
+                - rowgroup:
+                  - row "Name Last commit message Last commit date":
+                    - columnheader "Name"
+                    - columnheader "Last commit message":
+                      - generic "Last commit message"
+                    - columnheader "Last commit date":
+                      - generic "Last commit date"
+                - rowgroup [ref=e183]:
+                  - row "Latest commit History 1 Commit" [ref=e184]:
+                    - cell "Latest commit History 1 Commit" [ref=e185]:
+                      - generic [ref=e186]:
+                        - heading "Latest commit" [level=2] [ref=e187]
+                        - generic [ref=e190]:
+                          - heading "History" [level=2] [ref=e191]
+                          - link "1 Commit" [ref=e192] [cursor=pointer]:
+                            - /url: /TONYLEE0510/document-automatic-system/commits/main/
+                            - generic [ref=e193]:
+                              - generic:
+                                - img
+                              - generic [ref=e194]: 1 Commit
+                  - row "app, (Directory)" [ref=e195]:
+                    - cell "app, (Directory)" [ref=e196]:
+                      - generic [ref=e197]:
+                        - img [ref=e198]
+                        - link "app, (Directory)" [ref=e203] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/tree/main/app
+                          - text: app
+                    - cell [ref=e204]
+                    - cell [ref=e206]
+                  - row "lib, (Directory)" [ref=e209]:
+                    - cell "lib, (Directory)" [ref=e210]:
+                      - generic [ref=e211]:
+                        - img [ref=e212]
+                        - link "lib, (Directory)" [ref=e217] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/tree/main/lib
+                          - text: lib
+                    - cell [ref=e218]
+                    - cell [ref=e220]
+                  - row "prompts, (Directory)" [ref=e223]:
+                    - cell "prompts, (Directory)" [ref=e224]:
+                      - generic [ref=e225]:
+                        - img [ref=e226]
+                        - link "prompts, (Directory)" [ref=e231] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/tree/main/prompts
+                          - text: prompts
+                    - cell [ref=e232]
+                    - cell [ref=e234]
+                  - row ".dockerignore, (File)" [ref=e237]:
+                    - cell ".dockerignore, (File)" [ref=e238]:
+                      - generic [ref=e239]:
+                        - img [ref=e240]
+                        - link ".dockerignore, (File)" [ref=e245] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/.dockerignore
+                          - text: .dockerignore
+                    - cell [ref=e246]
+                    - cell [ref=e248]
+                  - row ".editorconfig, (File)" [ref=e251]:
+                    - cell ".editorconfig, (File)" [ref=e252]:
+                      - generic [ref=e253]:
+                        - img [ref=e254]
+                        - link ".editorconfig, (File)" [ref=e259] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/.editorconfig
+                          - text: .editorconfig
+                    - cell [ref=e260]
+                    - cell [ref=e262]
+                  - row ".env.example, (File)" [ref=e265]:
+                    - cell ".env.example, (File)" [ref=e266]:
+                      - generic [ref=e267]:
+                        - img [ref=e268]
+                        - link ".env.example, (File)" [ref=e273] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/.env.example
+                          - text: .env.example
+                    - cell [ref=e274]
+                    - cell [ref=e276]
+                  - row ".gitignore, (File)" [ref=e279]:
+                    - cell ".gitignore, (File)" [ref=e280]:
+                      - generic [ref=e281]:
+                        - img [ref=e282]
+                        - link ".gitignore, (File)" [ref=e287] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/.gitignore
+                          - text: .gitignore
+                    - cell [ref=e288]
+                    - cell [ref=e290]
+                  - row "AGENTS.md, (File)" [ref=e293]:
+                    - cell "AGENTS.md, (File)" [ref=e294]:
+                      - generic [ref=e295]:
+                        - img [ref=e296]
+                        - link "AGENTS.md, (File)" [ref=e301] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/AGENTS.md
+                          - text: AGENTS.md
+                    - cell [ref=e302]
+                    - cell [ref=e304]
+                  - row "CLAUDE.md, (File)" [ref=e307]:
+                    - cell "CLAUDE.md, (File)" [ref=e308]:
+                      - generic [ref=e309]:
+                        - img [ref=e310]
+                        - link "CLAUDE.md, (File)" [ref=e315] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/CLAUDE.md
+                          - text: CLAUDE.md
+                    - cell [ref=e316]
+                    - cell [ref=e318]
+                  - row "Dockerfile, (File)" [ref=e321]:
+                    - cell "Dockerfile, (File)" [ref=e322]:
+                      - generic [ref=e323]:
+                        - img [ref=e324]
+                        - link "Dockerfile, (File)" [ref=e329] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/Dockerfile
+                          - text: Dockerfile
+                    - cell [ref=e330]
+                    - cell [ref=e332]
+                  - row "README.md, (File)" [ref=e335]:
+                    - cell "README.md, (File)" [ref=e336]:
+                      - generic [ref=e337]:
+                        - img [ref=e338]
+                        - link "README.md, (File)" [ref=e343] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/README.md
+                          - text: README.md
+                    - cell [ref=e344]
+                    - cell [ref=e346]
+                  - row "axhub.yaml, (File)" [ref=e349]:
+                    - cell "axhub.yaml, (File)" [ref=e350]:
+                      - generic [ref=e351]:
+                        - img [ref=e352]
+                        - link "axhub.yaml, (File)" [ref=e357] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/axhub.yaml
+                          - text: axhub.yaml
+                    - cell [ref=e358]
+                    - cell [ref=e360]
+                  - row "axhub.yaml.example, (File)" [ref=e363]:
+                    - cell "axhub.yaml.example, (File)" [ref=e364]:
+                      - generic [ref=e365]:
+                        - img [ref=e366]
+                        - link "axhub.yaml.example, (File)" [ref=e371] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/axhub.yaml.example
+                          - text: axhub.yaml.example
+                    - cell [ref=e372]
+                    - cell [ref=e374]
+                  - row "eslint.config.mjs, (File)" [ref=e377]:
+                    - cell "eslint.config.mjs, (File)" [ref=e378]:
+                      - generic [ref=e379]:
+                        - img [ref=e380]
+                        - link "eslint.config.mjs, (File)" [ref=e385] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/eslint.config.mjs
+                          - text: eslint.config.mjs
+                    - cell [ref=e386]
+                    - cell [ref=e388]
+                  - row "next.config.ts, (File)" [ref=e391]:
+                    - cell "next.config.ts, (File)" [ref=e392]:
+                      - generic [ref=e393]:
+                        - img [ref=e394]
+                        - link "next.config.ts, (File)" [ref=e399] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/next.config.ts
+                          - text: next.config.ts
+                    - cell [ref=e400]
+                    - cell [ref=e402]
+                  - row "package.json, (File)" [ref=e405]:
+                    - cell "package.json, (File)" [ref=e406]:
+                      - generic [ref=e407]:
+                        - img [ref=e408]
+                        - link "package.json, (File)" [ref=e413] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/package.json
+                          - text: package.json
+                    - cell [ref=e414]
+                    - cell [ref=e416]
+                  - row "postcss.config.mjs, (File)" [ref=e419]:
+                    - cell "postcss.config.mjs, (File)" [ref=e420]:
+                      - generic [ref=e421]:
+                        - img [ref=e422]
+                        - link "postcss.config.mjs, (File)" [ref=e427] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/postcss.config.mjs
+                          - text: postcss.config.mjs
+                    - cell [ref=e428]
+                    - cell [ref=e430]
+                  - row "tailwind.config.ts, (File)" [ref=e433]:
+                    - cell "tailwind.config.ts, (File)" [ref=e434]:
+                      - generic [ref=e435]:
+                        - img [ref=e436]
+                        - link "tailwind.config.ts, (File)" [ref=e441] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/tailwind.config.ts
+                          - text: tailwind.config.ts
+                    - cell [ref=e442]
+                    - cell [ref=e444]
+                  - row "tsconfig.json, (File)" [ref=e447]:
+                    - cell "tsconfig.json, (File)" [ref=e448]:
+                      - generic [ref=e449]:
+                        - img [ref=e450]
+                        - link "tsconfig.json, (File)" [ref=e455] [cursor=pointer]:
+                          - /url: /TONYLEE0510/document-automatic-system/blob/main/tsconfig.json
+                          - text: tsconfig.json
+                    - cell [ref=e456]
+                    - cell [ref=e458]
+            - generic [ref=e462]:
+              - generic [ref=e463]:
+                - heading "Repository files navigation" [level=2] [ref=e464]
+                - navigation "Repository files" [ref=e465]:
+                  - list [ref=e466]:
+                    - listitem [ref=e467]:
+                      - link "README" [ref=e468] [cursor=pointer]:
+                        - /url: "#"
+                        - img [ref=e470]
+                        - generic [ref=e472]: README
+                - button "Outline" [ref=e473] [cursor=pointer]:
+                  - img [ref=e474]
+              - article [ref=e477]:
+                - generic [ref=e478]:
+                  - heading "nextjs-axhub" [level=1] [ref=e479]
+                  - 'link "Permalink: nextjs-axhub" [ref=e480] [cursor=pointer]':
+                    - /url: "#nextjs-axhub"
+                    - img [ref=e481]
+                - paragraph [ref=e483]:
+                  - text: axhub 위에서 바로 굴러가는
+                  - strong [ref=e484]: Next.js 16 + React 19 + Tailwind 3
+                  - text: 템플릿이에요.
+                  - strong [ref=e485]: Claude Code
+                  - text: 로 바이브코딩하면서 axhub 에 한 줄 명령으로 배포할 수 있게 미리 세팅돼 있어요.
+                - generic [ref=e486]:
+                  - heading "0. 누가 쓰면 좋아요" [level=2] [ref=e487]
+                  - 'link "Permalink: 0. 누가 쓰면 좋아요" [ref=e488] [cursor=pointer]':
+                    - /url: "#0-누가-쓰면-좋아요"
+                    - img [ref=e489]
+                - paragraph [ref=e491]: 비전공자, 비개발자, 기획자, 사무직, 디자이너 — 코드를 직접 한 줄도 안 짜더라도 AI 한테 "이런 화면 만들어줘" 만 부탁하면 알아서 굴러가도록 디자인됐어요.
+                - generic [ref=e492]:
+                  - heading "1. 5분 안에 시작" [level=2] [ref=e493]
+                  - 'link "Permalink: 1. 5분 안에 시작" [ref=e494] [cursor=pointer]':
+                    - /url: "#1-5분-안에-시작"
+                    - img [ref=e495]
+                - generic [ref=e497]:
+                  - generic [ref=e498]:
+                    - generic [ref=e499]: "# 1) 이 템플릿만 내 컴퓨터로 가져오기 (npm 깔려 있어야 함, Node 20+ 권장)"
+                    - text: npx degit jocoding-ax-partners/axhub-template/nextjs-axhub my-app cd my-app
+                    - generic [ref=e500]: "# 2) 의존성 설치"
+                    - text: npm install
+                    - generic [ref=e501]: "# 3) (로컬 테스트용) 환경변수 채우기"
+                    - text: cp .env.example .env.local
+                    - generic [ref=e502]: "# .env.local 을 열어서 APPHUB_* 값을 채워요. axhub 로 배포하면 자동 주입돼요."
+                    - generic [ref=e503]: "# 4) 로컬 서버 띄우기"
+                    - text: npm run dev
+                    - generic [ref=e504]: "# http://localhost:3000 에 접속"
+                  - button "Copy code to clipboard" [ref=e506] [cursor=pointer]:
+                    - img [ref=e507]
+                - generic [ref=e510]:
+                  - heading "2. 바이브코딩 흐름" [level=2] [ref=e511]
+                  - 'link "Permalink: 2. 바이브코딩 흐름" [ref=e512] [cursor=pointer]':
+                    - /url: "#2-바이브코딩-흐름"
+                    - img [ref=e513]
+                - list [ref=e515]:
+                  - listitem [ref=e516]: Claude Code 를 열어요.
+                  - listitem [ref=e517]: "\"메인 페이지에 입력 폼이랑 결과 카드 넣어줘\" 같은 자연어 요청을 던져요."
+                  - listitem [ref=e518]:
+                    - text: AI 가
+                    - code [ref=e519]: app/page.tsx
+                    - text: 같은 파일을 고쳐요.
+                  - listitem [ref=e520]: 저장하면 브라우저가 자동 새로고침 — 결과 확인.
+                  - listitem [ref=e521]: 마음에 들면 다음 기능, 안 들면 다시 부탁.
+                - generic [ref=e522]:
+                  - heading "3. axhub Hub API 쓰기 (@ax-hub/sdk 2.x)" [level=2] [ref=e523]:
+                    - text: 3. axhub Hub API 쓰기 (
+                    - code [ref=e524]: "@ax-hub/sdk 2.x"
+                    - text: )
+                  - 'link "Permalink: 3. axhub Hub API 쓰기 (@ax-hub/sdk 2.x)" [ref=e525] [cursor=pointer]':
+                    - /url: "#3-axhub-hub-api-쓰기-ax-hubsdk-2x"
+                    - img [ref=e526]
+                - paragraph [ref=e528]:
+                  - text: 백엔드 호출은
+                  - strong [ref=e529]:
+                    - text: 항상
+                    - code [ref=e530]: "@ax-hub/sdk 2.x"
+                  - text: 경유.
+                  - code [ref=e531]: lib/axhub-server.ts
+                  - text: 의 factory 헬퍼가 들어온 요청의 axhub 로그인 세션 쿠키(
+                  - code [ref=e532]: _hub_access
+                  - text: )를 SDK 의 JWT 로 박아
+                  - emphasis [ref=e533]: 그 사용자 자격
+                  - text: 으로 호출해요.
+                - generic [ref=e534]:
+                  - generic [ref=e535]: "// 예: app/api/me/route.ts import { makeAxhub } from \"@/lib/axhub-server\"; export async function GET() { const sdk = await makeAxhub(); const me = await sdk.identity.me(); // 타입 안전: me.email / me.name / me.tenants[] return Response.json(me); }"
+                  - button "Copy code to clipboard" [ref=e537] [cursor=pointer]:
+                    - img [ref=e538]
+                - generic [ref=e541]:
+                  - generic [ref=e542]: "// 예: 앱 데이터 CRUD — sdk.tenant().app().data 까지 helper 한 줄로 import { where } from \"@ax-hub/sdk\"; import { makeApp } from \"@/lib/axhub-server\"; const app = await makeApp(); const todos = await app.data.discover<{ id: string; title: string; done: boolean }>(\"todos\"); // owner-scoped 테이블(owner_column)은 무필터 list 가 내 행만 자동 반환해요 (SDK ≥2.1.2). // non-owner-scoped 테이블은 최소 1개 where 필터가 필수예요 (mass-scan guard — 없으면 ValidationError). const page = await todos.list({ where: where(\"done\").eq(false), limit: 20 }); await todos.insert({ title: \"할 일\", done: false });"
+                  - button "Copy code to clipboard" [ref=e544] [cursor=pointer]:
+                    - img [ref=e545]
+                - blockquote [ref=e548]:
+                  - paragraph [ref=e549]:
+                    - generic [ref=e550]: ⚠️
+                    - code [ref=e551]: lib/axhub-server.ts
+                    - text: 는
+                    - strong [ref=e552]: Server-side 전용
+                    - text: 이에요 (
+                    - code [ref=e553]: next/headers
+                    - text: 사용).
+                    - code [ref=e554]: "\"use client\""
+                    - text: 컴포넌트에서 import 하면 빌드가 깨져요. axhub 호출은 항상 Server Component / Route Handler / Server Action 에서. 모듈 레벨에
+                    - code [ref=e555]: AxHubClient
+                    - text: 캐싱 금지 — 요청별로
+                    - code [ref=e556]: makeAxhub()
+                    - text: /
+                    - code [ref=e557]: makeApp()
+                    - text: 새로 호출해야 사용자 자격이 안 섞여요.
+                - generic [ref=e558]:
+                  - heading "3-A. Gateway query — 외부 DB / SaaS 조회 (핵심 기능)" [level=3] [ref=e559]
+                  - 'link "Permalink: 3-A. Gateway query — 외부 DB / SaaS 조회 (핵심 기능)" [ref=e560] [cursor=pointer]':
+                    - /url: "#3-a-gateway-query--외부-db--saas-조회-핵심-기능"
+                    - img [ref=e561]
+                - paragraph [ref=e563]:
+                  - text: axhub Gateway 는 자체 PostgreSQL / MySQL / SaaS connector 를 안전하게 조회시켜 줘요. 모든 호출이 audit log 에 기록되고, connector 권한 정책으로 게이트돼요.
+                  - strong [ref=e564]: 직접 DB 접속 금지
+                  - text: — 항상 SDK 의
+                  - code [ref=e565]: gateway.query
+                  - text: 만.
+                - generic [ref=e566]:
+                  - generic [ref=e567]: "// 예: app/api/employees/route.ts import { queryConnector } from \"@/lib/axhub-server\"; export async function GET() { // connector \"이름\" 으로 호출 — connector UUID 와 tenant UUID 스코프는 queryConnector 가 알아서 처리해요. const res = await queryConnector<{ id: number; name: string }>({ connector: \"my-db\", // connector 이름 (gateway.connectors.list() 의 .name) path: \"public/employees\", // connector 안 리소스 경로 sql: \"SELECT id, name FROM employees WHERE active = ? LIMIT ?\", // placeholder 는 engine 별 (mysql ?, postgres $1) params: [true, 10], // ✅ 항상 parameterized SQL (injection 방지) rowLimit: 10, }); return Response.json({ rows: res.rows, rowCount: res.rowCount }); }"
+                  - button "Copy code to clipboard" [ref=e569] [cursor=pointer]:
+                    - img [ref=e570]
+                - list [ref=e573]:
+                  - listitem [ref=e574]:
+                    - code [ref=e575]: connector
+                    - text: 는 connector "이름" —
+                    - code [ref=e576]: queryConnector
+                    - text: 가
+                    - code [ref=e577]: gateway.connectors.list()
+                    - text: 로 UUID 를 resolve 해요.
+                    - generic [ref=e578]: ⚠️
+                    - text: gateway 는 tenant 경로에 UUID 가 필요해 slug 기반
+                    - code [ref=e579]: makeTenant()
+                    - text: 로는 안 돼요 (helper 가
+                    - code [ref=e580]: me()
+                    - text: 로 tenant UUID 를 잡아줘요).
+                  - listitem [ref=e581]:
+                    - code [ref=e582]: connector
+                    - text: /
+                    - code [ref=e583]: path
+                    - text: /
+                    - code [ref=e584]: sql
+                    - text: 은 코드 상수 — 사용자 입력은 반드시
+                    - code [ref=e585]: params
+                    - text: 로 분리 (권한 우회·injection 방지).
+                  - listitem [ref=e586]:
+                    - code [ref=e587]: res.allowed === false
+                    - text: 면 정책으로 가려진 결과 (
+                    - code [ref=e588]: res.denyReason
+                    - text: ).
+                    - code [ref=e589]: PoolStaleError
+                    - text: (401, 자격 만료) /
+                    - code [ref=e590]: PermissionDeniedError
+                    - text: (정책 거부) 분기.
+                - generic [ref=e591]:
+                  - heading "3-B. Query DSL — 데이터 API filter" [level=3] [ref=e592]
+                  - 'link "Permalink: 3-B. Query DSL — 데이터 API filter" [ref=e593] [cursor=pointer]':
+                    - /url: "#3-b-query-dsl--데이터-api-filter"
+                    - img [ref=e594]
+                - paragraph [ref=e596]:
+                  - code [ref=e597]: "app.data.table(...).list({ where })"
+                  - text: 에는
+                  - code [ref=e598]: where()
+                  - text: /
+                  - code [ref=e599]: and()
+                  - text: 헬퍼 조합만 넣어요. 라이브 백엔드에 push 가능한 건
+                  - strong [ref=e600]:
+                    - text: top-level
+                    - code [ref=e601]: and
+                    - text: +
+                    - code [ref=e602]: eq/ne/gt/gte/lt/lte/in/like
+                  - text: 뿐이에요 —
+                  - code [ref=e603]: or()
+                  - text: /
+                  - code [ref=e604]: not()
+                  - text: 은 push 불가라 SDK 가
+                  - code [ref=e605]: ValidationError
+                  - text: 로 즉시 거부해요 ("A 또는 B" 는
+                  - code [ref=e606]: in([...])
+                  - text: 으로, 그 외 OR 분기는 호출을 나눠서).
+                  - code [ref=e607]: list
+                  - text: /
+                  - code [ref=e608]: count
+                  - text: 는 non-owner-scoped 테이블에서 최소 1개 where 가 필수예요 (mass-scan guard) — owner-scoped 테이블(owner_column)은 무필터 호출이 내 행만 자동 반환해요 (SDK ≥2.1.2). LIKE 패턴은
+                  - code [ref=e609]: "%"
+                  - text: /
+                  - code [ref=e610]: _
+                  - text: 자동 escape + ReDoS 가드 내장이라 사용자 입력 그대로 넣어도 안전.
+                - generic [ref=e611]:
+                  - generic [ref=e612]: "import { where, and, defineSchema } from \"@ax-hub/sdk\"; import { makeApp } from \"@/lib/axhub-server\"; const Orders = defineSchema({ table: \"orders\", columns: { id: \"uuid\", status: { type: \"enum\", values: [\"paid\", \"pending\"] as const }, total: \"number\", }, }); const app = await makeApp(); const filter = and( where(Orders.cols.status).eq(\"paid\"), where(Orders.cols.total).gt(100), where(\"priority\").in([\"high\", \"urgent\"]), // \"A 또는 B\" 는 in 으로 표현해요 ); const page = await app.data.table(Orders).list({ where: filter, select: [\"id\", \"total\"] as const, // projection — 필요한 컬럼만 orderBy: [{ field: \"id\", dir: \"asc\" }], limit: 50, });"
+                  - button "Copy code to clipboard" [ref=e614] [cursor=pointer]:
+                    - img [ref=e615]
+                - generic [ref=e618]:
+                  - heading "4. axhub 에 배포" [level=2] [ref=e619]
+                  - 'link "Permalink: 4. axhub 에 배포" [ref=e620] [cursor=pointer]':
+                    - /url: "#4-axhub-에-배포"
+                    - img [ref=e621]
+                - generic [ref=e623]:
+                  - heading "A. Claude Code 사용자" [level=3] [ref=e624]
+                  - 'link "Permalink: A. Claude Code 사용자" [ref=e625] [cursor=pointer]':
+                    - /url: "#a-claude-code-사용자"
+                    - img [ref=e626]
+                - generic [ref=e628]:
+                  - code [ref=e630]: /axhub:deploy
+                  - button "Copy code to clipboard" [ref=e632] [cursor=pointer]:
+                    - img [ref=e633]
+                - paragraph [ref=e636]: 배포 미리보기 카드 → 동의 → 끝. 빌드 진행 상황 자동으로 한국어로 안내해줘요.
+                - generic [ref=e637]:
+                  - heading "B. CLI 직접" [level=3] [ref=e638]
+                  - 'link "Permalink: B. CLI 직접" [ref=e639] [cursor=pointer]':
+                    - /url: "#b-cli-직접"
+                    - img [ref=e640]
+                - generic [ref=e642]:
+                  - generic [ref=e643]:
+                    - generic [ref=e644]: "# 한 번만: axhub 콘솔에서 앱 등록 후 슬러그 복사"
+                    - text: axhub apps
+                    - generic [ref=e645]: "# 내 앱 목록 확인"
+                    - text: axhub deploy create --app my-app-slug --branch main axhub deploy status dep_xxxxx --watch
+                  - button "Copy code to clipboard" [ref=e647] [cursor=pointer]:
+                    - img [ref=e648]
+                - paragraph [ref=e651]:
+                  - code [ref=e652]: axhub.yaml
+                  - text: 을 새로 쓰거나 고칠 때는
+                  - code [ref=e653]: axhub.yaml.example
+                  - text: 에 axhub.yaml 에서 쓸 수 있는 필드와 제약을 모두 적어뒀으니 먼저 참고하세요.
+                - paragraph [ref=e654]:
+                  - text: 빌드는 repo 의
+                  - code [ref=e655]: Dockerfile
+                  - text: (
+                  - code [ref=e656]: output:"standalone"
+                  - text: →
+                  - code [ref=e657]: node server.js
+                  - text: )로 떠요.
+                - generic [ref=e658]:
+                  - heading "5. 환경변수 / 설정" [level=2] [ref=e659]
+                  - 'link "Permalink: 5. 환경변수 / 설정" [ref=e660] [cursor=pointer]':
+                    - /url: "#5-환경변수--설정"
+                    - img [ref=e661]
+                - table [ref=e664]:
+                  - rowgroup [ref=e665]:
+                    - row "변수 용도" [ref=e666]:
+                      - columnheader "변수" [ref=e667]
+                      - columnheader "용도" [ref=e668]
+                  - rowgroup [ref=e669]:
+                    - row "APPHUB_API_URL Hub API origin (https://api.axhub.ai)" [ref=e670]:
+                      - cell "APPHUB_API_URL" [ref=e671]:
+                        - code [ref=e672]: APPHUB_API_URL
+                      - cell "Hub API origin (https://api.axhub.ai)" [ref=e673]:
+                        - text: Hub API origin (
+                        - code [ref=e674]: https://api.axhub.ai
+                        - text: )
+                    - row "APPHUB_APP_SLUG 내 앱 슬러그 (document-automatic-system)" [ref=e675]:
+                      - cell "APPHUB_APP_SLUG" [ref=e676]:
+                        - code [ref=e677]: APPHUB_APP_SLUG
+                      - cell "내 앱 슬러그 (document-automatic-system)" [ref=e678]:
+                        - text: 내 앱 슬러그 (
+                        - code [ref=e679]: document-automatic-system
+                        - text: )
+                    - row "APPHUB_TENANT 내 테넌트 슬러그 (nonghyupit)" [ref=e680]:
+                      - cell "APPHUB_TENANT" [ref=e681]:
+                        - code [ref=e682]: APPHUB_TENANT
+                      - cell "내 테넌트 슬러그 (nonghyupit)" [ref=e683]:
+                        - text: 내 테넌트 슬러그 (
+                        - code [ref=e684]: nonghyupit
+                        - text: )
+                - paragraph [ref=e685]:
+                  - text: axhub 로 배포하면 위 값들은 소스의
+                  - code [ref=e686]: "{{...}}"
+                  - text: placeholder 치환으로
+                  - strong [ref=e687]: 자동 주입
+                  - text: 돼요.
+                  - code [ref=e688]: .env.local
+                  - text: 은 로컬 테스트용 override.
+                  - strong [ref=e689]: API key 는 없어요
+                  - text: — 인증은 들어온 요청의 세션 쿠키 포워딩으로. data API 주소는
+                  - code [ref=e690]: API_URL
+                  - text: + 테넌트/슬러그로 자동 조합돼요.
+                - generic [ref=e691]:
+                  - heading "6. 자주 막히는 곳" [level=2] [ref=e692]
+                  - 'link "Permalink: 6. 자주 막히는 곳" [ref=e693] [cursor=pointer]':
+                    - /url: "#6-자주-막히는-곳"
+                    - img [ref=e694]
+                - table [ref=e697]:
+                  - rowgroup [ref=e698]:
+                    - row "증상 해결" [ref=e699]:
+                      - columnheader "증상" [ref=e700]
+                      - columnheader "해결" [ref=e701]
+                  - rowgroup [ref=e702]:
+                    - row "npm install 실패 Node 버전 20+ 인지 node -v 확인" [ref=e703]:
+                      - cell "npm install 실패" [ref=e704]:
+                        - code [ref=e705]: npm install
+                        - text: 실패
+                      - cell "Node 버전 20+ 인지 node -v 확인" [ref=e706]:
+                        - text: Node 버전 20+ 인지
+                        - code [ref=e707]: node -v
+                        - text: 확인
+                    - row "axhub deploy 가 \"앱을 못 찾아요\" axhub apps 로 슬러그 다시 확인" [ref=e708]:
+                      - cell "axhub deploy 가 \"앱을 못 찾아요\"" [ref=e709]:
+                        - code [ref=e710]: axhub deploy
+                        - text: 가 "앱을 못 찾아요"
+                      - cell "axhub apps 로 슬러그 다시 확인" [ref=e711]:
+                        - code [ref=e712]: axhub apps
+                        - text: 로 슬러그 다시 확인
+                    - row "빌드 통과한 것 같은데 페이지가 빈 화면 Server Component 에서 isAxhubConfigured() 출력해서 설정 확인" [ref=e713]:
+                      - cell "빌드 통과한 것 같은데 페이지가 빈 화면" [ref=e714]
+                      - cell "Server Component 에서 isAxhubConfigured() 출력해서 설정 확인" [ref=e715]:
+                        - text: Server Component 에서
+                        - code [ref=e716]: isAxhubConfigured()
+                        - text: 출력해서 설정 확인
+                    - row "next/headers import 에러 \"use client\" 컴포넌트에서 lib/axhub-server 를 import 했는지 확인 — server 전용" [ref=e717]:
+                      - cell "next/headers import 에러" [ref=e718]:
+                        - code [ref=e719]: next/headers
+                        - text: import 에러
+                      - cell "\"use client\" 컴포넌트에서 lib/axhub-server 를 import 했는지 확인 — server 전용" [ref=e720]:
+                        - code [ref=e721]: "\"use client\""
+                        - text: 컴포넌트에서
+                        - code [ref=e722]: lib/axhub-server
+                        - text: 를 import 했는지 확인 — server 전용
+                    - row "TenantSlugRequiredError 떨어짐 sdk.apps.* 처럼 flat 호출 말고 makeApp() / makeTenant() 거치세요 — tenant 슬러그 자동 주입" [ref=e723]:
+                      - cell "TenantSlugRequiredError 떨어짐" [ref=e724]:
+                        - code [ref=e725]: TenantSlugRequiredError
+                        - text: 떨어짐
+                      - cell "sdk.apps.* 처럼 flat 호출 말고 makeApp() / makeTenant() 거치세요 — tenant 슬러그 자동 주입" [ref=e726]:
+                        - code [ref=e727]: sdk.apps.*
+                        - text: 처럼 flat 호출 말고
+                        - code [ref=e728]: makeApp()
+                        - text: /
+                        - code [ref=e729]: makeTenant()
+                        - text: 거치세요 — tenant 슬러그 자동 주입
+                    - 'row "AxHubClient requires tokenType 에러 직접 new AxHubClient({ token }) 만들 때 발생. 그냥 makeAxhub() 쓰세요 — tokenType 자동" [ref=e730]':
+                      - cell "AxHubClient requires tokenType 에러" [ref=e731]:
+                        - code [ref=e732]: AxHubClient requires tokenType
+                        - text: 에러
+                      - 'cell "직접 new AxHubClient({ token }) 만들 때 발생. 그냥 makeAxhub() 쓰세요 — tokenType 자동" [ref=e733]':
+                        - text: 직접
+                        - code [ref=e734]: "new AxHubClient({ token })"
+                        - text: 만들 때 발생. 그냥
+                        - code [ref=e735]: makeAxhub()
+                        - text: 쓰세요 — tokenType 자동
+                    - row "Tailwind class 가 안 먹음 tailwind.config.ts 의 content 경로에 새 폴더 추가" [ref=e736]:
+                      - cell "Tailwind class 가 안 먹음" [ref=e737]
+                      - cell "tailwind.config.ts 의 content 경로에 새 폴더 추가" [ref=e738]:
+                        - code [ref=e739]: tailwind.config.ts
+                        - text: 의
+                        - code [ref=e740]: content
+                        - text: 경로에 새 폴더 추가
+                - generic [ref=e741]:
+                  - heading "7. 관련 자료" [level=2] [ref=e742]
+                  - 'link "Permalink: 7. 관련 자료" [ref=e743] [cursor=pointer]':
+                    - /url: "#7-관련-자료"
+                    - img [ref=e744]
+                - list [ref=e746]:
+                  - listitem [ref=e747]:
+                    - link "axhub 가이드" [ref=e748] [cursor=pointer]:
+                      - /url: https://github.com/jocoding-ax-partners/axhub
+                  - listitem [ref=e749]:
+                    - link "Next.js 16 docs" [ref=e750] [cursor=pointer]:
+                      - /url: https://nextjs.org/docs
+                  - listitem [ref=e751]:
+                    - link "Tailwind 3 docs" [ref=e752] [cursor=pointer]:
+                      - /url: https://v3.tailwindcss.com
+                - generic [ref=e753]:
+                  - heading "axhub-server.ts 신뢰 모델 (이 템플릿)" [level=2] [ref=e754]
+                  - 'link "Permalink: axhub-server.ts 신뢰 모델 (이 템플릿)" [ref=e755] [cursor=pointer]':
+                    - /url: "#axhub-serverts-신뢰-모델-이-템플릿"
+                    - img [ref=e756]
+                - paragraph [ref=e758]:
+                  - text: 이 (Next.js) 템플릿은
+                  - strong [ref=e759]: server-side
+                  - text: . axhub 호출은
+                  - code [ref=e760]: "@ax-hub/sdk 2.x"
+                  - text: 의
+                  - code [ref=e761]: AxHubClient
+                  - text: 한 종류만 — helper 는
+                  - code [ref=e762]: makeAxhub
+                  - text: /
+                  - code [ref=e763]: makeApp
+                  - text: /
+                  - code [ref=e764]: makeTenant
+                  - text: +
+                  - code [ref=e765]: APP_SLUG
+                  - text: /
+                  - code [ref=e766]: TENANT
+                  - text: /
+                  - code [ref=e767]: isAxhubConfigured()
+                  - text: 를 노출해요. 인증은 axhub 로그인 세션 쿠키(
+                  - code [ref=e768]: _hub_access
+                  - text: ") 로: 이 템플릿은 들어온 요청의 쿠키("
+                  - code [ref=e769]: next/headers
+                  - text: 의
+                  - code [ref=e770]: cookies()
+                  - text: ) 를 JWT 로 꺼내 SDK 에 박고, SDK 가
+                  - code [ref=e771]: "Authorization: Bearer"
+                  - text: 로 자동 처리해요. 정적 API key 안 써요. 모듈-레벨 client 캐시 금지 — 매 요청마다 factory. 풀 비교 표는
+                  - link "axhub-template README" [ref=e772] [cursor=pointer]:
+                    - /url: /TONYLEE0510/document-automatic-system/blob/README.md#axhubts-%EC%8B%A0%EB%A2%B0-%EB%AA%A8%EB%8D%B8-3%EC%A2%85-%EA%B3%B5%ED%86%B5
+                  - text: 참고.
+                - generic [ref=e773]:
+                  - heading "8. 라이선스" [level=2] [ref=e774]
+                  - 'link "Permalink: 8. 라이선스" [ref=e775] [cursor=pointer]':
+                    - /url: "#8-라이선스"
+                    - img [ref=e776]
+                - paragraph [ref=e778]: MIT — 마음껏 쓰세요.
+        - generic [ref=e782]:
+          - generic [ref=e785]:
+            - heading "About" [level=2] [ref=e786]
+            - paragraph [ref=e787]: Created via axhub bootstrap
+            - heading "Resources" [level=3] [ref=e788]
+            - link "Readme" [ref=e790] [cursor=pointer]:
+              - /url: "#readme-ov-file"
+              - img [ref=e791]
+              - text: Readme
+            - link "Activity" [ref=e794] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/activity
+              - img [ref=e795]
+              - text: Activity
+            - heading "Stars" [level=3] [ref=e797]
+            - link "0 stars" [ref=e799] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/stargazers
+              - img [ref=e800]
+              - strong [ref=e802]: "0"
+              - text: stars
+            - heading "Watchers" [level=3] [ref=e803]
+            - link "0 watching" [ref=e805] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/watchers
+              - img [ref=e806]
+              - strong [ref=e808]: "0"
+              - text: watching
+            - heading "Forks" [level=3] [ref=e809]
+            - link "0 forks" [ref=e811] [cursor=pointer]:
+              - /url: /TONYLEE0510/document-automatic-system/forks
+              - img [ref=e812]
+              - strong [ref=e814]: "0"
+              - text: forks
+            - link "Report repository" [ref=e816] [cursor=pointer]:
+              - /url: /contact/report-content?content_url=https%3A%2F%2Fgithub.com%2FTONYLEE0510%2Fdocument-automatic-system&report=TONYLEE0510+%28user%29
+          - generic [ref=e818]:
+            - heading "Releases" [level=2] [ref=e819]:
+              - link "Releases" [ref=e820] [cursor=pointer]:
+                - /url: /TONYLEE0510/document-automatic-system/releases
+            - generic [ref=e821]: No releases published
+          - generic "Loading latest packages" [ref=e824]:
+            - heading "Packages" [level=2] [ref=e825]:
+              - link "Packages" [ref=e826] [cursor=pointer]:
+                - /url: /users/TONYLEE0510/packages?repo_name=document-automatic-system
+          - generic "Loading contributors" [ref=e838]:
+            - generic:
+              - heading "Contributors" [level=2] [ref=e839]:
+                - link "Contributors" [ref=e840] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/graphs/contributors
+              - list [ref=e841]:
+                - listitem [ref=e842]
+                - listitem [ref=e844]
+                - listitem [ref=e846]
+          - generic [ref=e849]:
+            - heading "Languages" [level=2] [ref=e850]
+            - list [ref=e857]:
+              - listitem [ref=e858]:
+                - link "TypeScript 87.9%" [ref=e859] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/search?l=typescript
+                  - img [ref=e860]
+                  - generic [ref=e862]: TypeScript
+                  - generic [ref=e863]: 87.9%
+              - listitem [ref=e864]:
+                - link "CSS 7.6%" [ref=e865] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/search?l=css
+                  - img [ref=e866]
+                  - generic [ref=e868]: CSS
+                  - generic [ref=e869]: 7.6%
+              - listitem [ref=e870]:
+                - link "Dockerfile 3.3%" [ref=e871] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/search?l=dockerfile
+                  - img [ref=e872]
+                  - generic [ref=e874]: Dockerfile
+                  - generic [ref=e875]: 3.3%
+              - listitem [ref=e876]:
+                - link "JavaScript 1.2%" [ref=e877] [cursor=pointer]:
+                  - /url: /TONYLEE0510/document-automatic-system/search?l=javascript
+                  - img [ref=e878]
+                  - generic [ref=e880]: JavaScript
+                  - generic [ref=e881]: 1.2%
+  - contentinfo [ref=e883]:
+    - heading "Footer" [level=2] [ref=e884]
+    - generic [ref=e885]:
+      - generic [ref=e886]:
+        - link "GitHub Homepage" [ref=e887] [cursor=pointer]:
+          - /url: https://github.com
+          - img [ref=e888]
+        - generic [ref=e890]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e891]:
+        - heading "Footer navigation" [level=3] [ref=e892]
+        - list "Footer navigation" [ref=e893]:
+          - listitem [ref=e894]:
+            - link "Terms" [ref=e895] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e896]:
+            - link "Privacy" [ref=e897] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e898]:
+            - link "Security" [ref=e899] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e900]:
+            - link "Status" [ref=e901] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e902]:
+            - link "Community" [ref=e903] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e904]:
+            - link "Docs" [ref=e905] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e906]:
+            - link "Contact" [ref=e907] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e908]:
+            - button "Manage cookies" [ref=e910] [cursor=pointer]
+          - listitem [ref=e911]:
+            - button "Do not share my personal information" [ref=e913] [cursor=pointer]

@@ -1,0 +1,378 @@
+# DAS (Document Automatic System) MVP Spec
+
+> NH 정보시스템 · 주간업무 보고 자동화 시스템
+> 작성일: 2026.06.16
+> 최종 수정: 2026.06.24 (B모드 개선 완료)
+
+---
+
+## 📋 1. 문제 정의
+
+**현재 상황:**
+- 주간보고를 수기(오프라인)로 작성 중
+- 각 계층(팀원 → 팀장 → 부장 → 본부장 → 임원)별 취합 과정이 복잡하고 관리 어려움
+- 보고서 버전 관리, 진행상황 추적 불명확
+
+**해결할 문제:**
+주간보고의 전체 프로세스를 디지털화하고, 계층별 자동 롤업 시스템으로 **효율적인 보고 문화 구축**
+
+---
+
+## 👥 2. 핵심 사용자 (페르소나)
+
+| 사용자 | 역할 | 주요 작업 |
+|--------|------|---------|
+| **팀원** | 1순위 사용자 | 주간보고 항목 작성 |
+| **팀장/부장/본부장/임원** | 상급자 | 하위 보고서 조회 → 4개 선택 → 확정 |
+
+---
+
+## 🎯 3. 핵심 기능 (MVP)
+
+> 우선순위 범례:
+> - 🔴 **MVP 필수** (반드시 7/15까지 완성)
+> - 🟡 **MVP 2순위** (시간 남으면 추가)
+> - 🟢 **v2** (이후 개발)
+
+### 3-1. 팀원 입력 폼 🔴 MVP 필수
+
+- ✅ **필드 (최소화)**:
+  - 기본: 업무제목, 상태(완료/계속/신규), 담당자
+  - 내용: 업무설명
+  - 일정: 시작일, 종료일, 진행현황
+  - **(제외 - v2)**: 업무구분, 작업내용 표, 요청구분, 변경사유 등 복잡한 필드
+
+- ✅ **기본 CRUD**: 생성/조회/수정/삭제 ✅ (제출 후 수정 가능)
+- 🟡 **임시저장 기능**: 제외 → 작성 후 바로 제출, 제출 후 "재편집" 버튼으로 수정
+- 🟢 **다음주 재활용**: v2 (지난주 미선택 항목 복사)
+
+### 3-2. 계층별 선택·확정 화면 🔴 MVP 필수 (팀원→팀장만)
+
+- ✅ **팀원 → 팀장 한 계층만 MVP에 포함**:
+  - 팀원이 제출한 항목 → 팀장이 조회 → 4개 선택 → 확정
+  - 자동 롤업은 UI/로직을 제네릭하게 만들어서 부장~임원 확장 가능하게 설계
+
+- ✅ **선택 기능**:
+  - 하위 부서의 확정 항목들 표시
+  - 체크박스로 선택 (정확히 4개)
+  - 선택 완료 시 "확정 제출" 버튼 활성화
+
+- ✅ **에디터 모드 (문구 수정 선택사항)**:
+  - 각 계층이 선택한 항목 수정 가능 (최신 버전만 유지, 이력 X)
+  - 확정 후에도 재편집 가능
+
+- 🟢 **부장 이상 계층**: 초기 설계에 포함, 코드 구현은 time-permitting
+- 🟢 **선택되지 않은 항목 유지**: v2
+
+### 3-3. 보고서 생성 및 다운로드
+
+- 🔴 **DOCX 다운로드 (MVP 필수)**:
+  - docx.js로 팀장 선택 항목 → 보고서 DOCX 자동 생성
+  - 다운로드 버튼으로 저장 가능
+  
+- 🟡 **HWP 자동 생성 (MVP 2순위)**:
+  - DOCX → LibreOffice CLI로 HWP 변환
+  - 시간 남으면 구현
+
+- 🟡 **실시간 미리보기 (MVP 2순위)**:
+  - 입력/수정 중 오른쪽에 최종 보고서 형태 표시
+  - 시간 남으면 구현
+
+- 🟢 **계층별 보고서** (v2):
+  - 부장/본부장/임원 보고서는 이후 구현
+
+- 🟢 **팀원 개별 기록**: v2
+
+### 3-4. 로그인 🔴 MVP 필수
+- ✅ 사번 / 비밀번호 입력
+- ✅ Supabase Auth 기반
+
+### 3-5. 시스템 관리자 화면
+- 🟢 **엑셀 조직도 자동 업로드**: v2 (JSON/SQL 수동 입력으로 초기 데이터 구성)
+- 🟢 **계층별 선택 수 설정**: v2 (하드코딩으로 4개 고정)
+- 🟢 **사용자 역할 관리**: v2
+
+### 3-6. 시스템 알림
+- 🟢 **마감 알림**: v2
+- 🟢 **확정 대기 알림**: v2
+- 🟢 **확정 완료 알림**: v2
+
+### 3-7. AI 지원 기능
+- 🟡 **오탈자 검출 및 하이라이트 (hunspell)** (MVP 2순위):
+  - 팀원: 입력폼 작성 중 실시간 오탈자 검출 → 하이라이트 표시
+  - 팀장: 에디터 모드에서 오탈자 검출 → 수정 가능
+
+- 🟡 **HWP 실시간 미리보기 (MVP 2순위)**:
+  - 입력/수정 중 우측에 최종 보고서(HWP 형식) 미리보기 표시
+
+---
+
+## 🚫 4. 제외 범위
+
+### MVP에서 제외 (v2로 미루는 것)
+- ❌ **엑셀 조직도 자동 업로드** (JSON/SQL 수동 입력으로 시작)
+- ❌ **시스템 알림** (마감/대기/완료 알림)
+- ❌ **부장 이상 다계층 테스트** (초기 설계에는 포함, 코드 구현은 time-permitting)
+- ❌ **복잡한 입력 폼 필드** (업무구분, 작업내용 표, 요청구분, 변경사유 등)
+- ❌ **다음주 재활용 기능** (지난주 미선택 항목 복사)
+- ❌ **항목 선택 후 미리보기** (DOCX 생성 후는 다운로드만)
+
+### 범위 외 (Out of Scope)
+- ❌ 이메일 알림
+- ❌ 고급 필터/검색/통계 기능
+- ❌ 조직도 HR 시스템 자동 동기화
+- ❌ 모바일 앱
+
+---
+
+## ✅ 5. 성공 기준 
+
+### MVP (3주) - 팀원 → 팀장 단계
+**"다음 엔드투엔드 플로우가 완벽하게 동작하면 성공"**
+1. 팀원이 주간보고 항목 작성 & 제출 (입력폼에서 오탈자 검출, HWP 미리보기)
+2. 팀장이 하위 항목 조회 & 4개 선택 & 에디터 모드로 수정
+3. 팀장 보고서를 HWP로 자동 생성 & 다운로드
+4. 조직도/권한 관리자 화면에서 기본 설정 가능
+
+### 추가 (2주 이후) - 부장 → 임원 단계
+5. 초기에 generic 설계로 부장/본부장/임원 화면 구현 완료 (테스트는 미완료)
+6. 팀장이 확정한 항목이 자동으로 부장 화면에 롤업
+7. 부장 → 본부장 → 임원이 동일한 플로우로 진행
+8. 임원이 확정한 최종 4개가 법인 보고서로 생성
+9. **조직이 실제로 사용하면서 만족도를 느낌**
+   - 버전 관리 명확화
+   - 계층별 취합 프로세스 자동화
+   - 진행상황 투명성 확보
+
+---
+
+## 🛠️ 6. 기술 스택
+
+| 항목 | 선택 | 비고 |
+|------|------|------|
+| **프레임워크** | Next.js (App Router) | TypeScript 필수 |
+| **DB** | Supabase (PostgreSQL) | 인증도 Supabase 사용 |
+| **배포** | Vercel | Next.js 최적화 |
+| **문서 출력** | docx.js + LibreOffice CLI | DOCX 생성 → HWP 변환 |
+| **오탈자 검출** | hunspell | 한글 오탈자 검출 |
+| **UI 스타일** | Tailwind CSS | 기존 프로젝트 기술 스택 준용 |
+
+---
+
+## 📊 7. DB 스키마 (필수 테이블)
+
+```sql
+-- 사용자
+CREATE TABLE users (
+  id UUID PRIMARY KEY,
+  employee_id VARCHAR UNIQUE NOT NULL,  -- 사번
+  password_hash VARCHAR NOT NULL,
+  name VARCHAR NOT NULL,
+  role VARCHAR NOT NULL,  -- team/manager/director/vp/executive
+  department_id UUID REFERENCES departments(id)
+);
+
+-- 부서
+CREATE TABLE departments (
+  id UUID PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  type VARCHAR NOT NULL,  -- team/department/division/company
+  parent_id UUID REFERENCES departments(id),  -- 상위 부서
+  selection_count INTEGER DEFAULT 4,  -- 이 계층에서 선택할 항목 수 (기본 4)
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+
+-- 주간보고 (주차별 묶음)
+CREATE TABLE weekly_reports (
+  id UUID PRIMARY KEY,
+  week_start DATE NOT NULL,
+  department_id UUID REFERENCES departments(id),
+  level VARCHAR NOT NULL,  -- team/manager/director/vp/executive
+  status VARCHAR NOT NULL,  -- draft/submitted/confirmed
+  created_at TIMESTAMP,
+  confirmed_at TIMESTAMP
+);
+
+-- 보고서 항목 (1건)
+CREATE TABLE report_items (
+  id UUID PRIMARY KEY,
+  report_id UUID REFERENCES weekly_reports(id),
+  author_id UUID REFERENCES users(id),
+  
+  -- 기본정보
+  category VARCHAR NOT NULL,  -- 업무구분
+  section VARCHAR NOT NULL,  -- 금주/차주
+  title VARCHAR NOT NULL,  -- 업무제목
+  status_tag VARCHAR NOT NULL,  -- 완료/계속/신규
+  assignee_name VARCHAR,
+  assignee_role VARCHAR,
+  
+  -- 내용
+  description TEXT,  -- 업무설명 (원문)
+  edited_description TEXT,  -- 각 계층에서 수정된 문구 (최신 버전만 저장)
+  
+  -- 일정
+  request_type VARCHAR,  -- 자체개선/부서요청
+  wor_number VARCHAR,
+  date_start DATE,
+  date_end DATE,
+  complete_date DATE,
+  complete_date_changed BOOLEAN,
+  complete_date_reason TEXT,
+  progress VARCHAR,  -- 개발(10%) 등
+  
+  -- 상태 & 롤업
+  selected BOOLEAN,  -- 선택 여부
+  selected_at_level VARCHAR,  -- 선택된 계층 (team/department/division 등)
+  selected_at_department_id UUID REFERENCES departments(id),  -- 선택한 부서
+  approved BOOLEAN,  -- 확정 여부
+  item_order INTEGER,  -- 각 계층에서의 순번
+  
+  created_at TIMESTAMP,
+  updated_at TIMESTAMP
+);
+
+-- 항목 내 작업내용 표 (선택적)
+CREATE TABLE report_item_tables (
+  id UUID PRIMARY KEY,
+  item_id UUID REFERENCES report_items(id),
+  row_order INTEGER,
+  col_label VARCHAR,  -- "현행" or "변경후" or "작업내용"
+  content TEXT,
+  created_at TIMESTAMP
+);
+```
+
+---
+
+## 📅 8. 개발 일정 (3주 × 1시간/day = 21시간)
+
+### MVP (3주) - 팀원 → 팀장 완벽 작동
+
+#### **Week 1 (약 7시간)** — 기반 & 학습 집중
+| 작업 | 예상 시간 | 상태 |
+|------|---------|------|
+| Next.js/TypeScript/Supabase 기초 튜토리얼 | 2h | 기술 학습 필수 |
+| DB 스키마 설계 & Supabase 구성 | 2h | 간단하게 시작 |
+| 조직도 데이터(JSON) 초기 로드 | 1h | 엑셀 X, JSON만 |
+| 로그인 UI/로직 (Supabase Auth) | 1.5h | 기본만 |
+| 프로젝트 기본 구조 설계 (제네릭) | 0.5h | 부장~임원 고려 |
+
+#### **Week 2 (약 7시간)** — 팀원 입력
+| 작업 | 예상 시간 | 상태 |
+|------|---------|------|
+| 입력 폼 UI 구현 (필드 최소화) | 2h | MVP 필드만 |
+| CRUD 로직 (생성/조회/수정/삭제) | 2h | 기본 기능만 |
+| 제출 로직 | 1.5h | status = submitted |
+| 오탈자 검출(hunspell) 통합 | 1h | 선택사항, 시간 남으면 |
+| 🔄 **폴백**: 오탈자 빼고 기본 CRUD만 | 6.5h | time 부족 시 |
+
+#### **Week 3 (약 7시간)** — 팀장 선택 & 완성
+| 작업 | 예상 시간 | 상태 |
+|------|---------|------|
+| 팀장 선택 화면 UI | 2h | 체크박스 4개 선택 |
+| 자동 롤업 로직 | 2h | 제네릭 설계로 확장 가능 |
+| 에디터 모드 (문구 수정) | 1h | 선택사항 |
+| DOCX 생성 (docx.js) | 1.5h | MVP 필수 |
+| E2E 테스트 & 버그 수정 | 0.5h | 통합 테스트 |
+| 🔄 **폴백**: 수정 기능 빼고 선택만 | 5.5h | time 부족 시 |
+
+### **Time 남으면 (우선순위순)**
+1. 오탈자 검출(hunspell) 추가 → HWP 미리보기 추가
+2. DOCX → HWP 변환 (LibreOffice CLI)
+3. 부장~임원 계층 코드 구현 (테스트 X)
+
+### **Time 부족 시 (제거 순서)**
+1. 오탈자 검출 → 미리보기 제거
+2. HWP 변환 제거 (DOCX만)
+3. 문구 수정(에디터 모드) 제거 (선택만)
+4. 부장~임원 구현 전체 보류
+
+---
+
+## 🎯 9. v2 계획 (Out of Scope)
+
+### MVP 후 계획 (2주 후)
+- ✅ 부장/본부장/임원 취합 화면 확장 (예정)
+- ✅ 각 계층별 선택 수 커스터마이징 (동적 변경)
+
+### v2 이후
+- 고급 검색/필터/통계 (보고서 분석)
+- HR 시스템 자동 동기화 (엑셀 수동 → API 자동)
+- 회의일정, 추진예정업무 섹션 추가
+- 메일 알림 연동
+- 모바일 앱
+- API 문서화 및 외부 연동
+
+---
+
+## 📌 10. 결정 사항 & 리스크 관리
+
+### ✅ 확정된 사항
+- **MVP 필수 (반드시 7/15)**: 팀원 입력 + 팀장 선택 + DOCX 다운로드 + 로그인
+- **자동 롤업**: 제네릭 설계로 초기부터 확장성 고려
+- **문구 수정**: 각 계층에서 수정 가능 (최신 버전만 유지, 이력 X)
+- **선택 수**: 모든 계층 4개 (하드코딩)
+- **초기 데이터**: JSON/SQL 수동 입력 (엑셀 X)
+
+### 🟡 MVP 2순위 (시간 남으면)
+- 오탈자 검출 + HWP 미리보기 + HWP 변환
+
+### 🟢 v2로 미루기
+- 엑셀 자동 업로드 / 시스템 알림 / 부장~임원 테스트 / 다음주 재활용
+
+---
+
+## ⚠️ 리스크 & 대응 전략
+
+### 1️⃣ **시간 부족 (21시간은 최소선)**
+- **위협**: 예상치 못한 버그, 기술 학습 오버
+- **대응**: 
+  - 매일 진행상황 체크 (1시간이니 정확히 관리)
+  - 우선순위 엄격히 지킬 것 (MVP 필수만 먼저)
+  - 시간 부족 시 제거 순서 명확히 정함
+
+### 2️⃣ **기술 학습 곡선 (첫 1주가 중요)**
+- **위협**: Next.js/TypeScript/Supabase 학습이 생각보다 오래 걸림
+- **대응**:
+  - Week 1부터 튜토리얼 + 동시에 프로젝트 시작
+  - 완벽한 이해보다 "작동하는 것"에 집중
+  - git/PR/Claude Code 모르면 강의 영상 1개만 빠르게 보기
+
+### 3️⃣ **자동 롤업이 가장 복잡한 부분**
+- **위협**: 상태 관리 복잡 → 버그 많음
+- **대응**:
+  - 팀원→팀장 한 계층만 완벽히 먼저
+  - 부장~임원은 UI만 만들고 로직은 복사하기
+  - DB 쿼리는 간단하게 (복잡한 조건 X)
+
+### 4️⃣ **HWP 자동 생성 기술 불확실성**
+- **위협**: LibreOffice 설치/CLI 호출 복잡할 수 있음
+- **대응**:
+  - Week 1에 미리 테스트해보기 (로컬 설정 확인)
+  - 문제 생기면 DOCX만 하기 (HWP는 v2)
+  - docx.js는 안정적이니 여유 있음
+
+---
+
+## 📋 일일 체크리스트 (매일 1시간)
+
+```
+□ 오늘의 작업 목표 정하기 (5분)
+□ 코딩 (45분)
+□ 테스트 & 버그 확인 (5분)
+□ 진행상황 기록 (5분)
+```
+
+---
+
+## 🎯 최종 성공 기준
+
+**7/15에 다음이 "완벽하게" 작동하면 성공:**
+1. 팀원이 입력 폼에 항목 작성 → 제출
+2. 팀장이 팀원의 4개 항목 선택 → 확정
+3. 팀장이 "보고서 다운로드" 버튼 클릭 → DOCX 파일 생성
+4. 엑셀 없이도 조직도 데이터 기본 설정 가능
+
+**이 4단계가 리스크 없이 작동하면 MVP 성공입니다.** ✅

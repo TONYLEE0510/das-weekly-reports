@@ -61,8 +61,8 @@ Week 3 (7h)  → 팀장 선택 화면 + DOCX 생성
 
 ### 🔴 MVP 필수 (7/15까지)
 - [x] 전체 스펙 정의
+- [x] Next.js 프로젝트 초기화 (S0)
 - [ ] Supabase DB 스키마 설계
-- [ ] Next.js 프로젝트 초기화
 - [ ] 로그인 화면 (사번/비밀번호)
 - [ ] 팀원 입력 폼 (최소 필드)
 - [ ] 팀장 선택 화면 (4개 체크박스)
@@ -83,27 +83,40 @@ Week 3 (7h)  → 팀장 선택 화면 + DOCX 생성
 
 ---
 
-## 🛠️ 개발 시작
+## 🛠️ 로컬 개발 실행 (S0 이후)
 
-### 1. 환경 설정
+### 1. 의존성 설치
 ```bash
-# Node.js 18+ 필요
-node --version
-
-# Supabase CLI 설치
-npm install -g @supabase/cli
-
-# Next.js 프로젝트 생성 (나중에)
-npx create-next-app@latest --typescript
+npm install
 ```
 
-### 2. Supabase 프로젝트
+### 2. 환경변수 설정
 ```bash
-# Supabase 계정 생성 & 프로젝트 초기화
-supabase start
+cp .env.example .env.local
+# .env.local에 Supabase 프로젝트 값 입력:
+#   NEXT_PUBLIC_SUPABASE_URL
+#   NEXT_PUBLIC_SUPABASE_ANON_KEY
+#   SUPABASE_SERVICE_ROLE_KEY
+```
+> Supabase 값은 https://supabase.com 에서 프로젝트 생성 후
+> Settings → API 에서 확인합니다.
 
-# DB 스키마 import (final_spec.md 참고)
-# users, departments, weekly_reports, report_items 테이블 생성
+### 3. DB 마이그레이션 적용
+`supabase/migrations/` 의 SQL을 순서대로 Supabase SQL Editor에 실행합니다.
+- `0000_health_check.sql` — S0 연결 확인용 헬스체크 테이블
+
+### 4. 개발 서버 실행
+```bash
+npm run dev
+# http://localhost:3000 접속
+# → "Supabase 연결 상태"가 초록불(연결 성공)이면 S0 완료
+```
+
+### 검증 명령
+```bash
+npx tsc --noEmit   # 타입체크
+npm run lint       # 린트
+npm run build      # 프로덕션 빌드
 ```
 
 ### 3. GitHub Issues

@@ -62,8 +62,8 @@ Week 3 (7h)  → 팀장 선택 화면 + DOCX 생성
 ### 🔴 MVP 필수 (7/15까지)
 - [x] 전체 스펙 정의
 - [x] Next.js 프로젝트 초기화 (S0)
-- [ ] Supabase DB 스키마 설계
-- [ ] 로그인 화면 (사번/비밀번호)
+- [x] Supabase DB 스키마 설계 (S1: departments/profiles)
+- [x] 로그인 화면 (사번/비밀번호) (S1)
 - [ ] 팀원 입력 폼 (최소 필드)
 - [ ] 팀장 선택 화면 (4개 체크박스)
 - [ ] DOCX 보고서 생성 & 다운로드
@@ -104,12 +104,28 @@ cp .env.example .env.local
 ### 3. DB 마이그레이션 적용
 `supabase/migrations/` 의 SQL을 순서대로 Supabase SQL Editor에 실행합니다.
 - `0000_health_check.sql` — S0 연결 확인용 헬스체크 테이블
+- `0001_org_and_auth.sql` — departments/profiles + 가입 트리거 + RLS
+- `0002_seed_departments.sql` — 조직도 시드 (카드본부 계층)
 
-### 4. 개발 서버 실행
+### 4. 데모 사용자 시드 (S1)
+```bash
+npm run seed:users
+```
+생성되는 데모 계정 (비밀번호 공통 `das1234!`):
+
+| 사번 | 이름 | 역할 | 부서 |
+|------|------|------|------|
+| 1001 | 김팀원 | 팀원 | 카드개발1팀 |
+| 1002 | 이팀원 | 팀원 | 카드개발1팀 |
+| 2001 | 박팀장 | 팀장 | 카드개발1팀 |
+| 3001 | 최부장 | 부장 | 카드개발부 |
+| 4001 | 정본부장 | 본부장 | 카드본부 |
+
+### 5. 개발 서버 실행
 ```bash
 npm run dev
-# http://localhost:3000 접속
-# → "Supabase 연결 상태"가 초록불(연결 성공)이면 S0 완료
+# http://localhost:3000       → Supabase 연결 상태(초록불) = S0
+# http://localhost:3000/login → 사번/비번 로그인 → /dashboard = S1
 ```
 
 ### 검증 명령

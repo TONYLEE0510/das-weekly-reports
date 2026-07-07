@@ -26,7 +26,7 @@ async function getTeamItems(): Promise<ManagerItem[]> {
   const { data } = await supabase
     .from("report_items")
     .select(
-      "id, title, status_tag, progress, report_section, selected, author:profiles!author_id(name), report:weekly_reports!inner(week_start, level)",
+      "id, title, status_tag, progress, description, edited_description, report_section, selected, author:profiles!author_id(name), report:weekly_reports!inner(week_start, level)",
     )
     .eq("report.level", "team")
     .eq("report.week_start", thisWeekMonday())
@@ -37,6 +37,8 @@ async function getTeamItems(): Promise<ManagerItem[]> {
     title: string;
     status_tag: string;
     progress: string | null;
+    description: string | null;
+    edited_description: string | null;
     report_section: ManagerItem["report_section"];
     selected: boolean;
     author: { name: string | null } | { name: string | null }[] | null;
@@ -49,6 +51,8 @@ async function getTeamItems(): Promise<ManagerItem[]> {
       title: r.title,
       status_tag: r.status_tag,
       progress: r.progress,
+      description: r.description,
+      edited_description: r.edited_description,
       report_section: r.report_section,
       selected: r.selected,
       author_name: author?.name ?? null,

@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
-const FIELD =
-  "rounded border px-3 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-black/20";
+import { ReportFields } from "./report-fields";
 
 export function ReportForm() {
   const router = useRouter();
@@ -17,8 +15,7 @@ export function ReportForm() {
     setError(null);
 
     const form = e.currentTarget;
-    const fd = new FormData(form);
-    const payload = Object.fromEntries(fd.entries());
+    const payload = Object.fromEntries(new FormData(form).entries());
 
     const res = await fetch("/api/reports", {
       method: "POST",
@@ -40,74 +37,7 @@ export function ReportForm() {
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-3">
-      <div className="flex flex-col gap-1">
-        <label htmlFor="title" className="text-sm font-medium">
-          업무제목 <span className="text-red-500">*</span>
-        </label>
-        <input id="title" name="title" required className={FIELD} />
-      </div>
-
-      <div className="grid grid-cols-2 gap-3">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="status_tag" className="text-sm font-medium">
-            상태 <span className="text-red-500">*</span>
-          </label>
-          <select id="status_tag" name="status_tag" required className={FIELD} defaultValue="신규">
-            <option value="신규">신규</option>
-            <option value="계속">계속</option>
-            <option value="완료">완료</option>
-          </select>
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="assignee_name" className="text-sm font-medium">
-            담당자
-          </label>
-          <input id="assignee_name" name="assignee_name" className={FIELD} />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-3 gap-3">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="date_start" className="text-sm font-medium">
-            작업시작일
-          </label>
-          <input id="date_start" name="date_start" type="date" className={FIELD} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="date_end" className="text-sm font-medium">
-            작업완료일
-          </label>
-          <input id="date_end" name="date_end" type="date" className={FIELD} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="progress" className="text-sm font-medium">
-            진행도
-          </label>
-          <input id="progress" name="progress" placeholder="예: 개발(10%)" className={FIELD} />
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-1">
-        <label htmlFor="description" className="text-sm font-medium">
-          업무설명
-        </label>
-        <textarea id="description" name="description" rows={2} className={FIELD} />
-      </div>
-
-      <div className="grid grid-cols-2 gap-3">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="change_before" className="text-sm font-medium">
-            변경 전 수행사항
-          </label>
-          <textarea id="change_before" name="change_before" rows={2} className={FIELD} />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="change_after" className="text-sm font-medium">
-            변경 후 수행사항
-          </label>
-          <textarea id="change_after" name="change_after" rows={2} className={FIELD} />
-        </div>
-      </div>
+      <ReportFields />
 
       {error && (
         <p className="text-sm text-red-600" role="alert">

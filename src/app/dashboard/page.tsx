@@ -3,28 +3,16 @@ import { getCurrentProfile, ROLE_LABEL } from "@/lib/auth";
 import { logout } from "@/app/login/actions";
 import { createClient } from "@/lib/supabase/server";
 import { ReportForm } from "@/components/report-form";
-import { SECTION_LABEL, type ReportSection } from "@/lib/report/classify";
+import { ReportItems, type ReportItem } from "@/components/report-items";
 
 export const dynamic = "force-dynamic";
-
-interface ReportItem {
-  id: string;
-  title: string;
-  status_tag: string;
-  assignee_name: string | null;
-  progress: string | null;
-  date_start: string | null;
-  date_end: string | null;
-  report_section: ReportSection;
-  created_at: string;
-}
 
 async function getMyItems(): Promise<ReportItem[]> {
   const supabase = await createClient();
   const { data } = await supabase
     .from("report_items")
     .select(
-      "id, title, status_tag, assignee_name, progress, date_start, date_end, report_section, created_at",
+      "id, title, status_tag, assignee_name, description, change_before, change_after, date_start, date_end, progress, report_section, created_at",
     )
     .order("created_at", { ascending: false });
   return (data as ReportItem[]) ?? [];
@@ -67,37 +55,7 @@ export default async function DashboardPage() {
             <h2 className="mb-4 text-lg font-semibold">
               내 보고 항목 ({items.length})
             </h2>
-            {items.length === 0 ? (
-              <p className="text-sm text-gray-500">
-                아직 작성한 항목이 없습니다. 위에서 작성해 보세요.
-              </p>
-            ) : (
-              <ul className="flex flex-col divide-y">
-                {items.map((item) => (
-                  <li key={item.id} className="flex items-start gap-3 py-3">
-                    <span
-                      className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-xs font-medium ${
-                        item.report_section === "this_week"
-                          ? "bg-blue-100 text-blue-700"
-                          : "bg-amber-100 text-amber-700"
-                      }`}
-                    >
-                      {SECTION_LABEL[item.report_section]}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <p className="font-medium">{item.title}</p>
-                      <p className="text-xs text-gray-500">
-                        {item.status_tag}
-                        {item.assignee_name && ` · ${item.assignee_name}`}
-                        {item.progress && ` · ${item.progress}`}
-                        {item.date_start && ` · ${item.date_start}`}
-                        {item.date_end && ` ~ ${item.date_end}`}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ReportItems items={items} />
           </section>
         </>
       ) : (

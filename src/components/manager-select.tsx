@@ -123,6 +123,15 @@ export function ManagerSelect({ items }: { items: ManagerItem[] }) {
           </span>
         )}
       </div>
+
+      {hasConfirmed && (
+        <a
+          href="/api/export/docx"
+          className="self-start rounded border border-black px-4 py-2 text-sm font-medium hover:bg-gray-50"
+        >
+          보고서 다운로드 (DOCX)
+        </a>
+      )}
       <p className="text-xs text-gray-400">
         정확히 {SELECTION_COUNT}개를 선택해야 확정할 수 있습니다.
       </p>

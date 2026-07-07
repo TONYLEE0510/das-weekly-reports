@@ -1,19 +1,44 @@
 import { redirect } from "next/navigation";
 import { getCurrentProfile, ROLE_LABEL } from "@/lib/auth";
 import { logout } from "@/app/login/actions";
+import { createClient } from "@/lib/supabase/server";
+import { ReportForm } from "@/components/report-form";
+import { SECTION_LABEL, type ReportSection } from "@/lib/report/classify";
 
 export const dynamic = "force-dynamic";
 
+interface ReportItem {
+  id: string;
+  title: string;
+  status_tag: string;
+  assignee_name: string | null;
+  progress: string | null;
+  date_start: string | null;
+  date_end: string | null;
+  report_section: ReportSection;
+  created_at: string;
+}
+
+async function getMyItems(): Promise<ReportItem[]> {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("report_items")
+    .select(
+      "id, title, status_tag, assignee_name, progress, date_start, date_end, report_section, created_at",
+    )
+    .order("created_at", { ascending: false });
+  return (data as ReportItem[]) ?? [];
+}
+
 export default async function DashboardPage() {
   const profile = await getCurrentProfile();
+  if (!profile) redirect("/login");
 
-  // 미들웨어가 1차 보호하지만, 프로필 없는 경우까지 방어
-  if (!profile) {
-    redirect("/login");
-  }
+  const isTeamMember = profile.role === "team";
+  const items = isTeamMember ? await getMyItems() : [];
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col gap-8 p-8">
+    <main className="mx-auto flex min-h-screen max-w-3xl flex-col gap-8 p-8">
       <header className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold">대시보드</h1>
@@ -31,21 +56,55 @@ export default async function DashboardPage() {
         </form>
       </header>
 
-      <section className="rounded-lg border p-6">
-        <h2 className="mb-3 text-lg font-semibold">내 정보</h2>
-        <dl className="grid grid-cols-[6rem_1fr] gap-y-2 text-sm">
-          <dt className="text-gray-500">사번</dt>
-          <dd>{profile.employee_id}</dd>
-          <dt className="text-gray-500">이름</dt>
-          <dd>{profile.name}</dd>
-          <dt className="text-gray-500">역할</dt>
-          <dd>{ROLE_LABEL[profile.role]}</dd>
-        </dl>
-      </section>
+      {isTeamMember ? (
+        <>
+          <section className="rounded-lg border p-6">
+            <h2 className="mb-4 text-lg font-semibold">주간보고 작성</h2>
+            <ReportForm />
+          </section>
 
-      <section className="rounded-lg border border-dashed p-6 text-sm text-gray-500">
-        여기에 역할별 기능이 추가됩니다. (S2: 팀원 입력 폼 · S4: 팀장 선택 화면)
-      </section>
+          <section className="rounded-lg border p-6">
+            <h2 className="mb-4 text-lg font-semibold">
+              내 보고 항목 ({items.length})
+            </h2>
+            {items.length === 0 ? (
+              <p className="text-sm text-gray-500">
+                아직 작성한 항목이 없습니다. 위에서 작성해 보세요.
+              </p>
+            ) : (
+              <ul className="flex flex-col divide-y">
+                {items.map((item) => (
+                  <li key={item.id} className="flex items-start gap-3 py-3">
+                    <span
+                      className={`mt-0.5 shrink-0 rounded px-2 py-0.5 text-xs font-medium ${
+                        item.report_section === "this_week"
+                          ? "bg-blue-100 text-blue-700"
+                          : "bg-amber-100 text-amber-700"
+                      }`}
+                    >
+                      {SECTION_LABEL[item.report_section]}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className="font-medium">{item.title}</p>
+                      <p className="text-xs text-gray-500">
+                        {item.status_tag}
+                        {item.assignee_name && ` · ${item.assignee_name}`}
+                        {item.progress && ` · ${item.progress}`}
+                        {item.date_start && ` · ${item.date_start}`}
+                        {item.date_end && ` ~ ${item.date_end}`}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        </>
+      ) : (
+        <section className="rounded-lg border border-dashed p-6 text-sm text-gray-500">
+          {ROLE_LABEL[profile.role]} 화면(하위 항목 선택·확정)은 S4에서 추가됩니다.
+        </section>
+      )}
     </main>
   );
 }
